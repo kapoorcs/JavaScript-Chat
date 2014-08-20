@@ -1,0 +1,58 @@
+
+<!-- saved from url=(0039)http://gamahe-achree.codio.io/chat.html -->
+<html data-ember-extension="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css" media="screen">
+      .box {
+	  border-style: solid;
+	  border-width: 1px;
+      }
+    </style>
+  <script type="text/javascript" src="./chat_files/jquery-1.10.2.min.js"></script>
+  </head>
+  <body>
+    <h1>Here's a simple chat window.</h1>
+    <div id="message-list" class="box">
+    
+    <div class="single-message">Admin<span class="sender"></span>: <span id="message">Hello, world!</span></div>
+  </div>
+    <input id="message-input" class="box">     
+    
+    <button id="message-send">Send</button>
+
+  <script type="text/javascript">
+    var messageCache = [{            // Create a local variable to store messages
+	user: "Admin",               // Add the initial entry where the user is named Admin
+	message: "Hello, world!"     // Add the initial entry with message "Hello, World!"
+    }];
+
+    function addMessage(data) {
+	var entry = $('#message-template').html();
+	entry = entry.replace('{{USER}}', data['user']);
+	entry = entry.replace('{{MESSAGE}}', data['message']);
+	$('#message-list').append(entry);	
+	messageCache.push(data);
+      }
+
+    $( function() {
+	var entry = $('#message-template').html();
+	entry = entry.replace('{{USER}}', messageCache[0]['user']);
+	entry = entry.replace('{{MESSAGE}}', messageCache[0]['message']);
+	$('#message-list').append(entry);
+
+	$('#message-send').click(function() {
+	    data = {
+		user: "Guest",
+		message: $('#message-input').val()
+	    }
+	    $('#message-input').val('');
+	    addMessage(data);
+	});
+    });
+  </script>
+  <script type="text/template" id="message-template">
+    <div class="single-message">{{USER}}<span class="sender"></span>: <span id="message">{{MESSAGE}}</span></div>
+  </script>
+  
+
+
+<script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script></body></html>

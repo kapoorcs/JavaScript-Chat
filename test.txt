@@ -1,0 +1,24 @@
+* Test
+** Objective:  Build a chat UI a simple front-end interface for a chat UI.
+** Deliverable: Give us your solution in a chat.html
+** Tasks:
+   - [ ] [0/6] Layout Design 
+     - [ ] Make the message list box 250px wide x 300px high
+     - [ ] Make the input box 200px wide
+     - [ ] Make the button square.
+     - [ ] Make the user name of the messages bold.
+     - [ ] Update the font to something other than Times New Roman.  Pick a font that is formal and professional.
+     - [ ] Make the webpage look nice with a professional color scheme for the background and the different regions.
+
+   - [ ] [0/4] User Interaction Design / Data Logic
+     - [ ] Upon mouse-click on Send Button, the code to append new messages is already provided.  Comment what each line of the addMessage function does in the javascript code.
+     - [ ] On the keyboard entry on input#message-input, post a message upon pressing ENTER.
+     - [ ] Add a transition using JQuery to fade in message from the right side when a new message is added.
+     - [ ] Upon adding new message, wait 1 second and echo back the same message as coming from the Admin user.
+
+   - [ ] [0/2] Advanced (Any candidate that can do the following will have my top consideration.)
+     - [ ] Redo this chat using MarrionetteJS (backbone-marionette.js)
+     - [ ] Make the data persistent using backbone-localStorage.js
+
+ Starter code is provided in chat.html.
+
